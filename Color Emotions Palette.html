@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Emotion of Color - Mahakatha Brand</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 40px;
+      background-color: #f9f7f4;
+      color: #1d2d44;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #1d2d44;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #1d2d44;
+      margin: 40px 0 20px 0;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    h3 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    .subtitle {
+      font-size: 16px;
+      color: #566573;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+    .color-guide {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .color-row {
+      display: flex;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    .color-swatches {
+      width: 300px;
+      display: flex;
+    }
+    .color-swatch {
+      width: 150px;
+      height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .hex-code {
+      font-family: monospace;
+      font-size: 12px;
+      background-color: rgba(255,255,255,0.85);
+      color: #333;
+      padding: 2px 6px;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+    .color-info {
+      flex: 1;
+      background: white;
+      padding: 20px 25px;
+    }
+    .color-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #1d2d44;
+      margin: 0 0 5px 0;
+    }
+    .hex-display {
+      font-family: monospace;
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+    .color-emotions {
+      font-size: 16px;
+      font-style: italic;
+      margin: 0 0 15px 0;
+      color: #566573;
+    }
+    .color-examples {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888;
+    }
+    .logo {
+      text-align: center;
+      margin-top: 50px;
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #F9393B;
+    }
+    .logo span {
+      font-size: 14px;
+      display: block;
+      font-weight: normal;
+      margin-top: 5px;
+      color: #888;
+    }
+    .pairing-examples {
+      margin-top: 60px;
+    }
+    .pairing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .font-pairing {
+      margin-top: 60px;
+    }
+    .font-example {
+      background: white;
+      padding: 25px;
+      border-radius: 6px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .font-example.dark {
+      background: #1A1A1A;
+      color: #FFFFFF;
+    }
+    .font-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    .font-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 18px;
+      margin-bottom: 20px;
+      opacity: 0.85;
+    }
+    .font-body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .font-details {
+      display: flex;
+      gap: 20px;
+      margin-top: 25px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      padding-top: 15px;
+    }
+    .dark .font-details {
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .font-info {
+      flex: 1;
+    }
+    .font-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .font-roles {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+    .hex-note {
+      font-family: monospace;
+      font-size: 12px;
+      margin-top: 5px;
+      opacity: 0.8;
+    }
+    .color-blocks {
+      margin-top: 60px;
+    }
+    .blocks-container {
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+    .seven-blocks {
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    }
+    .color-block {
+      flex: 1;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .block-hex {
+      font-family: monospace;
+      font-size: 12px;
+      background-color: rgba(255,255,255,0.85);
+      color: #333;
+      padding: 3px 6px;
+      border-radius: 3px;
+      margin-bottom: 8px;
+    }
+    .dark-blocks .block-hex {
+      background-color: rgba(0,0,0,0.7);
+      color: #fff;
+    }
+    .block-name {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+    .light-blocks .block-name {
+      color: #333;
+      text-shadow: none;
+    }
+    .pairing-card {
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    }
+    .pairing-header {
+      padding: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .pairing-content {
+      padding: 20px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .pairing-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .pairing-text {
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    .pairing-colors {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+    }
+    .pairing-color {
+      width: 30px;
+      height: 30px;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .color-label {
+      font-size: 9px;
+      text-align: center;
+      margin-top: 5px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="subtitle">SPIRITUAL BRAND DESIGN GUIDE</div>
+      <h1>THE EMOTION OF COLOR</h1>
+    </header>
+
+    <div class="color-guide">
+      <div class="color-row">
+        <div class="color-swatches">
+          <div class="color-swatch" style="background-color: #F9393B;">
+            <span class="hex-code">#F9393B</span>
+          </div>
+          <div class="color-swatch" style="background-color: #FFDFDF;">
+            <span class="hex-code">#FFDFDF</span>
+          </div>
+        </div>
+        <div class="color-info">
+          <h2 class="color-name">Vibrant Red</h2>
+          <p class="hex-display">#F9393B / Light: #FFDFDF</p>
+          <p class="color-emotions">transformation • energy • passion • vitality • awakening • power</p>
+          <div class="color-examples">EXAMPLE BRANDS: RED CROSS, NETFLIX, VIRGIN, COCA-COLA</div>
+        </div>
+      </div>
+
+      <div class="color-row">
+        <div class="color-swatches">
+          <div class="color-swatch" style="background-color: #F17A36;">
+            <span class="hex-code">#F17A36</span>
+          </div>
+          <div class="color-swatch" style="background-color: #FFE8D6;">
+            <span class="hex-code">#FFE8D6</span>
+          </div>
+        </div>
+        <div class="color-info">
+          <h2 class="color-name">Sacred Orange</h2>
+          <p class="hex-display">#F17A36 / Light: #FFE8D6</p>
+          <p class="color-emotions">creativity • joy • enthusiasm • warmth • expression • courage</p>
+          <div class="color-examples">EXAMPLE BRANDS: FANTA, NICKELODEON, MOZILLA FIREFOX</div>
+        </div>
+      </div>
+
+      <div class="color-row">
+        <div class="color-swatches">
+          <div class="color-swatch" style="background-color: #FFC843;">
+            <span class="hex-code">#FFC843</span>
+          </div>
+          <div class="color-swatch" style="background-color: #FFFBD6;">
+            <span class="hex-code">#FFFBD6</span>
+          </div>
+        </div>
+        <div class="color-info">
+          <h2 class="color-name">Golden Yellow</h2>
+          <p class="hex-display">#FFC843 / Light: #FFFBD6</p>
+          <p class="color-emotions">illumination • wisdom • optimism • clarity • enlightenment • joy</p>
+          <div class="color-examples">EXAMPLE BRANDS: NATIONAL GEOGRAPHIC, IKEA, BEST BUY</div>
+        </div>
+      </div>
+
+      <div class="color-row">
+        <div class="color-swatches">
+          <div class="color-swatch" style="background-color: #48A55C;">
+            <span class="hex-code">#48A55C</span>
+          </div>
+          <div class="color-swatch" style="background-color: #E5F5E0;">
+            <span class="hex-code">#E5F5E0</span>
+          </div>
+        </div>
+        <div class="color-info">
+          <h2 class="color-name">Heart Green</h2>
+          <p class="hex-display">#48A55C / Light: #E5F5E0</p>
+          <p class="color-emotions">harmony • growth • balance • renewal • compassion • healing</p>
+          <div class="color-examples">EXAMPLE BRANDS: WHOLE FOODS, ANIMAL PLANET, STARBUCKS</div>
+        </div>
+      </div>
+
+      <div class="color-row">
+        <div class="color-swatches">
+          <div class="color-swatch" style="background-color: #4AA7C7;">
+            <span class="hex-code">#4AA7C7</span>
+          </div>
+          <div class="color-swatch" style="background-color: #E0F2FA;">
+            <span class="hex-code">#E0F2FA</span>
+          </div>
+        </div>
+        <div class="color-info">
+          <h2 class="color-name">Serene Blue</h2>
+          <p class="hex-display">#4AA7C7 / Light: #E0F2FA</p>
+          <p class="color-emotions">communication • truth • serenity • clarity • expression • peace</p>
+          <div class="color-examples">EXAMPLE BRANDS: TWITTER, SKYPE, LINKEDIN, FORD</div>
+        </div>
+      </div>
+
+      <div class="color-row">
+        <div class="color-swatches">
+          <div class="color-swatch" style="background-color: #5C5CAF;">
+            <span class="hex-code">#5C5CAF</span>
+          </div>
+          <div class="color-swatch" style="background-color: #E4E4FA;">
+            <span class="hex-code">#E4E4FA</span>
+          </div>
+        </div>
+        <div class="color-info">
+          <h2 class="color-name">Intuition Indigo</h2>
+          <p class="hex-display">#5C5CAF / Light: #E4E4FA</p>
+          <p class="color-emotions">intuition • perception • insight • awareness • wisdom • vision</p>
+          <div class="color-examples">EXAMPLE BRANDS: INTEL, IBM, VISA, PBS</div>
+        </div>
+      </div>
+
+      <div class="color-row">
+        <div class="color-swatches">
+          <div class="color-swatch" style="background-color: #9A57BA;">
+            <span class="hex-code">#9A57BA</span>
+          </div>
+          <div class="color-swatch" style="background-color: #F0E4F5;">
+            <span class="hex-code">#F0E4F5</span>
+          </div>
+        </div>
+        <div class="color-info">
+          <h2 class="color-name">Spiritual Purple</h2>
+          <p class="hex-display">#9A57BA / Light: #F0E4F5</p>
+          <p class="color-emotions">spirituality • consciousness • transcendence • mysticism • inspiration • divine</p>
+          <div class="color-examples">EXAMPLE BRANDS: HALLMARK, YAHOO, CADBURY, ASPCA</div>
+        </div>
+      </div>
+
+      <div class="color-row">
+        <div class="color-swatches">
+          <div class="color-swatch" style="background-color: #8A7052;">
+            <span class="hex-code">#8A7052</span>
+          </div>
+          <div class="color-swatch" style="background-color: #F3E9D9;">
+            <span class="hex-code">#F3E9D9</span>
+          </div>
+        </div>
+        <div class="color-info">
+          <h2 class="color-name">Earthy Brown</h2>
+          <p class="hex-display">#8A7052 / Light: #F3E9D9</p>
+          <p class="color-emotions">grounding • stability • tradition • reliability • wisdom • security</p>
+          <div class="color-examples">EXAMPLE BRANDS: UPS, M&M'S, NESPRESSO, CENTURY 21</div>
+        </div>
+      </div>
+
+      <div class="color-row">
+        <div class="color-swatches">
+          <div class="color-swatch" style="background-color: #000000;">
+            <span class="hex-code">#000000</span>
+          </div>
+          <div class="color-swatch" style="background-color: #E6E6E6;">
+            <span class="hex-code">#E6E6E6</span>
+          </div>
+        </div>
+        <div class="color-info">
+          <h2 class="color-name">Cosmic Black</h2>
+          <p class="hex-display">#000000 / Light: #E6E6E6</p>
+          <p class="color-emotions">mystery • depth • timelessness • infinite • protection • powerful</p>
+          <div class="color-examples">EXAMPLE BRANDS: CHANEL, NIKE, HBO, THE NEW YORK TIMES</div>
+        </div>
+      </div>
+
+      <div class="color-row">
+        <div class="color-swatches">
+          <div class="color-swatch" style="background-color: #FFFFFF; border: 1px solid #eee;">
+            <span class="hex-code">#FFFFFF</span>
+          </div>
+          <div class="color-swatch" style="background-color: #F9F7F4; border: 1px solid #eee;">
+            <span class="hex-code">#F9F7F4</span>
+          </div>
+        </div>
+        <div class="color-info">
+          <h2 class="color-name">Pure White</h2>
+          <p class="hex-display">#FFFFFF / Off-White: #F9F7F4</p>
+          <p class="color-emotions">purity • clarity • simplicity • transcendence • perfection • openness</p>
+          <div class="color-examples">EXAMPLE BRANDS: APPLE, ZARA, ADIDAS, UNIQLO</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pairing-examples">
+      <h2>COLOR PAIRING EXAMPLES</h2>
+      <div class="pairing-grid">
+        <!-- Vibrant Red & Intuition Indigo -->
+        <div class="pairing-card">
+          <div class="pairing-header" style="background-color: #F9393B; color: #FFFFFF;">PRIMARY BRAND PAIRING</div>
+          <div class="pairing-content" style="background-color: #FFFFFF; color: #333333;">
+            <div class="pairing-title" style="color: #F9393B;">Transformative Wisdom</div>
+            <p class="pairing-text">Ancient practices can awaken the spirit and transform our modern lives when applied with intention and consistency.</p>
+            <div style="color: #5C5CAF; font-weight: bold; margin-bottom: 10px;">Learn More →</div>
+            <div class="pairing-colors">
+              <div>
+                <div class="pairing-color" style="background-color: #F9393B;"></div>
+                <div class="color-label">#F9393B</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #5C5CAF;"></div>
+                <div class="color-label">#5C5CAF</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #FFFFFF;"></div>
+                <div class="color-label">#FFFFFF</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #333333;"></div>
+                <div class="color-label">#333333</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Heart Green & Sacred Orange -->
+        <div class="pairing-card">
+          <div class="pairing-header" style="background-color: #48A55C; color: #FFFFFF;">HEART & SACRAL CHAKRAS</div>
+          <div class="pairing-content" style="background-color: #FFFFFF; color: #333333;">
+            <div class="pairing-title" style="color: #48A55C;">Compassionate Creation</div>
+            <p class="pairing-text">When heart-centered compassion meets creative energy, we manifest our highest intentions with love and purpose.</p>
+            <div style="color: #F17A36; font-weight: bold; margin-bottom: 10px;">Explore Practices →</div>
+            <div class="pairing-colors">
+              <div>
+                <div class="pairing-color" style="background-color: #48A55C;"></div>
+                <div class="color-label">#48A55C</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #F17A36;"></div>
+                <div class="color-label">#F17A36</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #FFFFFF;"></div>
+                <div class="color-label">#FFFFFF</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #333333;"></div>
+                <div class="color-label">#333333</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spiritual Purple & Golden Yellow -->
+        <div class="pairing-card">
+          <div class="pairing-header" style="background-color: #9A57BA; color: #FFFFFF;">CROWN & SOLAR PLEXUS</div>
+          <div class="pairing-content" style="background-color: #FFFFFF; color: #333333;">
+            <div class="pairing-title" style="color: #9A57BA;">Divine Illumination</div>
+            <p class="pairing-text">The crown chakra's connection to higher consciousness illuminated by the clarity and power of our inner sun.</p>
+            <div style="color: #FFC843; font-weight: bold; margin-bottom: 10px;">Discover More →</div>
+            <div class="pairing-colors">
+              <div>
+                <div class="pairing-color" style="background-color: #9A57BA;"></div>
+                <div class="color-label">#9A57BA</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #FFC843;"></div>
+                <div class="color-label">#FFC843</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #FFFFFF;"></div>
+                <div class="color-label">#FFFFFF</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #333333;"></div>
+                <div class="color-label">#333333</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Serene Blue & Earthy Brown -->
+        <div class="pairing-card">
+          <div class="pairing-header" style="background-color: #4AA7C7; color: #FFFFFF;">THROAT & EARTH ELEMENTS</div>
+          <div class="pairing-content" style="background-color: #FFFFFF; color: #333333;">
+            <div class="pairing-title" style="color: #4AA7C7;">Authentic Expression</div>
+            <p class="pairing-text">Speaking your truth with clear communication while remaining grounded in ancient wisdom and earthly stability.</p>
+            <div style="color: #8A7052; font-weight: bold; margin-bottom: 10px;">Join Our Workshop →</div>
+            <div class="pairing-colors">
+              <div>
+                <div class="pairing-color" style="background-color: #4AA7C7;"></div>
+                <div class="color-label">#4AA7C7</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #8A7052;"></div>
+                <div class="color-label">#8A7052</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #FFFFFF;"></div>
+                <div class="color-label">#FFFFFF</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #333333;"></div>
+                <div class="color-label">#333333</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dark Mode - Vibrant Red & Spiritual Purple -->
+        <div class="pairing-card">
+          <div class="pairing-header" style="background-color: #F9393B; color: #FFFFFF;">DARK MODE - PRIMARY</div>
+          <div class="pairing-content" style="background-color: #1A1A1A; color: #F0F0F0;">
+            <div class="pairing-title" style="color: #F9393B;">Inner Transformation</div>
+            <p class="pairing-text">The journey begins with awakening the root energy that grounds us while opening to higher spiritual dimensions.</p>
+            <div style="color: #9A57BA; font-weight: bold; margin-bottom: 10px;">Begin Your Journey →</div>
+            <div class="pairing-colors">
+              <div>
+                <div class="pairing-color" style="background-color: #F9393B;"></div>
+                <div class="color-label">#F9393B</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #9A57BA;"></div>
+                <div class="color-label">#9A57BA</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #1A1A1A;"></div>
+                <div class="color-label">#1A1A1A</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #F0F0F0;"></div>
+                <div class="color-label">#F0F0F0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dark Mode - Heart Green & Golden Yellow -->
+        <div class="pairing-card">
+          <div class="pairing-header" style="background-color: #48A55C; color: #FFFFFF;">DARK MODE - HEART & SOLAR</div>
+          <div class="pairing-content" style="background-color: #1A1A1A; color: #F0F0F0;">
+            <div class="pairing-title" style="color: #48A55C;">Heart-Centered Wisdom</div>
+            <p class="pairing-text">When we align our heart with our personal power, we make decisions that honor both our path and the greater good.</p>
+            <div style="color: #FFC843; font-weight: bold; margin-bottom: 10px;">Find Your Balance →</div>
+            <div class="pairing-colors">
+              <div>
+                <div class="pairing-color" style="background-color: #48A55C;"></div>
+                <div class="color-label">#48A55C</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #FFC843;"></div>
+                <div class="color-label">#FFC843</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #1A1A1A;"></div>
+                <div class="color-label">#1A1A1A</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #F0F0F0;"></div>
+                <div class="color-label">#F0F0F0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Light Mode - Subtle Backgrounds -->
+        <div class="pairing-card">
+          <div class="pairing-header" style="background-color: #5C5CAF; color: #FFFFFF;">LIGHT BACKGROUNDS</div>
+          <div class="pairing-content" style="background-color: #E4E4FA; color: #333333;">
+            <div class="pairing-title" style="color: #5C5CAF;">Intuitive Perception</div>
+            <p class="pairing-text">Subtle energy requires a refined perception. The third eye chakra helps us see beyond physical reality into deeper truths.</p>
+            <div style="color: #F9393B; font-weight: bold; margin-bottom: 10px;">Open Your Vision →</div>
+            <div class="pairing-colors">
+              <div>
+                <div class="pairing-color" style="background-color: #5C5CAF;"></div>
+                <div class="color-label">#5C5CAF</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #F9393B;"></div>
+                <div class="color-label">#F9393B</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #E4E4FA;"></div>
+                <div class="color-label">#E4E4FA</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #333333;"></div>
+                <div class="color-label">#333333</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Light Mode - Earth Tones -->
+        <div class="pairing-card">
+          <div class="pairing-header" style="background-color: #8A7052; color: #FFFFFF;">EARTHY TONES</div>
+          <div class="pairing-content" style="background-color: #F3E9D9; color: #333333;">
+            <div class="pairing-title" style="color: #8A7052;">Ancient Traditions</div>
+            <p class="pairing-text">The wisdom of indigenous cultures teaches us to honor the earth and embrace traditions that have sustained humanity for millennia.</p>
+            <div style="color: #F9393B; font-weight: bold; margin-bottom: 10px;">Learn the Practices →</div>
+            <div class="pairing-colors">
+              <div>
+                <div class="pairing-color" style="background-color: #8A7052;"></div>
+                <div class="color-label">#8A7052</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #F9393B;"></div>
+                <div class="color-label">#F9393B</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #F3E9D9;"></div>
+                <div class="color-label">#F3E9D9</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #333333;"></div>
+                <div class="color-label">#333333</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>" style="background-color: #F9393B;"></div>
+                <div class="color-label">Primary</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #5C5CAF;"></div>
+                <div class="color-label">Secondary</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #E0F2FA;"></div>
+                <div class="color-label">Highlight</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dark Mode Example -->
+        <div class="pairing-card">
+          <div class="pairing-header" style="background-color: #3D2E4F; color: #FFFFFF;">DARK MODE</div>
+          <div class="pairing-content" style="background-color: #1A1A1A; color: #F0F0F0;">
+            <div class="pairing-title" style="color: #F9393B;">Spiritual Wisdom</div>
+            <p class="pairing-text">The journey inward reveals truths that transcend our everyday experiences, connecting us to deeper dimensions of consciousness.</p>
+            <div style="color: #9A57BA; font-weight: bold; margin-bottom: 10px;">Continue Reading →</div>
+            <div class="pairing-colors">
+              <div>
+                <div class="pairing-color" style="background-color: #1A1A1A;"></div>
+                <div class="color-label">Background</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #F0F0F0;"></div>
+                <div class="color-label">Text</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #F9393B;"></div>
+                <div class="color-label">Primary</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #9A57BA;"></div>
+                <div class="color-label">Secondary</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #3D2E4F;"></div>
+                <div class="color-label">Highlight</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chakra-Themed Example -->
+        <div class="pairing-card">
+          <div class="pairing-header" style="background-color: #E5F5E0; color: #1d2d44;">CHAKRA-THEMED</div>
+          <div class="pairing-content" style="background-color: #FFFFFF; color: #333333;">
+            <div class="pairing-title" style="color: #48A55C;">Heart-Centered Practice</div>
+            <p class="pairing-text">Cultivating compassion and unconditional love opens the heart chakra, allowing healing energy to flow freely through your entire being.</p>
+            <div style="color: #F9393B; font-weight: bold; margin-bottom: 10px;">Explore Practices →</div>
+            <div class="pairing-colors">
+              <div>
+                <div class="pairing-color" style="background-color: #FFFFFF;"></div>
+                <div class="color-label">Background</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #333333;"></div>
+                <div class="color-label">Text</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #48A55C;"></div>
+                <div class="color-label">Primary</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #F9393B;"></div>
+                <div class="color-label">Secondary</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #E5F5E0;"></div>
+                <div class="color-label">Highlight</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Earthy Wisdom Example -->
+        <div class="pairing-card">
+          <div class="pairing-header" style="background-color: #F3E9D9; color: #1d2d44;">EARTHY WISDOM</div>
+          <div class="pairing-content" style="background-color: #F9F7F4; color: #333333;">
+            <div class="pairing-title" style="color: #8A7052;">Ancient Traditions</div>
+            <p class="pairing-text">The wisdom of indigenous cultures offers profound insights into our relationship with the natural world and our place within it.</p>
+            <div style="color: #F9393B; font-weight: bold; margin-bottom: 10px;">Discover More →</div>
+            <div class="pairing-colors">
+              <div>
+                <div class="pairing-color" style="background-color: #F9F7F4;"></div>
+                <div class="color-label">Background</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #333333;"></div>
+                <div class="color-label">Text</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #8A7052;"></div>
+                <div class="color-label">Primary</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #F9393B;"></div>
+                <div class="color-label">Secondary</div>
+              </div>
+              <div>
+                <div class="pairing-color" style="background-color: #F3E9D9;"></div>
+                <div class="color-label">Highlight</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="font-pairing">
+      <h2>TYPOGRAPHY PAIRING</h2>
+      
+      <!-- Light Mode Font Example -->
+      <div class="font-example">
+        <div class="font-title" style="color: #F9393B;">Discovering Inner Wisdom</div>
+        <div class="font-subtitle" style="color: #5C5CAF;">The ancient paths that lead to modern transformation</div>
+        <div class="font-body">The journey of spiritual awakening begins with a single moment of awareness. Within each of us lies the capacity to connect with deeper truths that transcend our everyday experiences. Through mindful practices, we can develop the ability to observe our thoughts without attachment, allowing insights to emerge naturally from a place of stillness.</div>
+        <div class="font-body">This wisdom, accessible to all who seek it with sincere hearts, bridges ancient traditions with contemporary understanding.</div>
+        
+        <div class="font-details">
+          <div class="font-info">
+            <div class="font-name">Inter Black</div>
+            <div class="font-roles">Headings, Titles, Display Text</div>
+            <div class="hex-note">Color: #F9393B</div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Inter Medium Italic</div>
+            <div class="font-roles">Subtitles, Quotes, Callouts</div>
+            <div class="hex-note">Color: #5C5CAF</div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Inter Regular</div>
+            <div class="font-roles">Body Text, UI Elements</div>
+            <div class="hex-note">Color: #333333</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Dark Mode Font Example -->
+      <div class="font-example dark">
+        <div class="font-title" style="color: #F9393B;">Discovering Inner Wisdom</div>
+        <div class="font-subtitle" style="color: #9A57BA;">The ancient paths that lead to modern transformation</div>
+        <div class="font-body">The journey of spiritual awakening begins with a single moment of awareness. Within each of us lies the capacity to connect with deeper truths that transcend our everyday experiences. Through mindful practices, we can develop the ability to observe our thoughts without attachment, allowing insights to emerge naturally from a place of stillness.</div>
+        <div class="font-body">This wisdom, accessible to all who seek it with sincere hearts, bridges ancient traditions with contemporary understanding.</div>
+        
+        <div class="font-details">
+          <div class="font-info">
+            <div class="font-name">Inter Black</div>
+            <div class="font-roles">Headings, Titles, Display Text</div>
+            <div class="hex-note">Color: #F9393B</div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Inter Medium Italic</div>
+            <div class="font-roles">Subtitles, Quotes, Callouts</div>
+            <div class="hex-note">Color: #9A57BA</div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Inter Regular</div>
+            <div class="font-roles">Body Text, UI Elements</div>
+            <div class="hex-note">Color: #FFFFFF</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-blocks">
+      <h2>7-COLOR PALETTES</h2>
+      
+      <!-- Dark Version -->
+      <h3 style="margin: 30px 0 15px 0;">Dark Mode Palette</h3>
+      <div class="blocks-container">
+        <div class="seven-blocks dark-blocks">
+          <div class="color-block" style="background-color: #F9393B;">
+            <span class="block-hex">#F9393B</span>
+            <span class="block-name">Vibrant Red</span>
+          </div>
+          <div class="color-block" style="background-color: #F17A36;">
+            <span class="block-hex">#F17A36</span>
+            <span class="block-name">Sacred Orange</span>
+          </div>
+          <div class="color-block" style="background-color: #FFC843;">
+            <span class="block-hex">#FFC843</span>
+            <span class="block-name">Golden Yellow</span>
+          </div>
+          <div class="color-block" style="background-color: #48A55C;">
+            <span class="block-hex">#48A55C</span>
+            <span class="block-name">Heart Green</span>
+          </div>
+          <div class="color-block" style="background-color: #4AA7C7;">
+            <span class="block-hex">#4AA7C7</span>
+            <span class="block-name">Serene Blue</span>
+          </div>
+          <div class="color-block" style="background-color: #5C5CAF;">
+            <span class="block-hex">#5C5CAF</span>
+            <span class="block-name">Intuition Indigo</span>
+          </div>
+          <div class="color-block" style="background-color: #9A57BA;">
+            <span class="block-hex">#9A57BA</span>
+            <span class="block-name">Spiritual Purple</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Light Version -->
+      <h3 style="margin: 30px 0 15px 0;">Light Mode Palette</h3>
+      <div class="blocks-container">
+        <div class="seven-blocks light-blocks">
+          <div class="color-block" style="background-color: #FFDFDF;">
+            <span class="block-hex">#FFDFDF</span>
+            <span class="block-name">Soft Petal</span>
+          </div>
+          <div class="color-block" style="background-color: #FFE8D6;">
+            <span class="block-hex">#FFE8D6</span>
+            <span class="block-name">Ethereal Cream</span>
+          </div>
+          <div class="color-block" style="background-color: #FFFBD6;">
+            <span class="block-hex">#FFFBD6</span>
+            <span class="block-name">Solar Light</span>
+          </div>
+          <div class="color-block" style="background-color: #E5F5E0;">
+            <span class="block-hex">#E5F5E0</span>
+            <span class="block-name">Whisper Sage</span>
+          </div>
+          <div class="color-block" style="background-color: #E0F2FA;">
+            <span class="block-hex">#E0F2FA</span>
+            <span class="block-name">Tranquil Mist</span>
+          </div>
+          <div class="color-block" style="background-color: #E4E4FA;">
+            <span class="block-hex">#E4E4FA</span>
+            <span class="block-name">Lavender Fog</span>
+          </div>
+          <div class="color-block" style="background-color: #F0E4F5;">
+            <span class="block-hex">#F0E4F5</span>
+            <span class="block-name">Gentle Amethyst</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="logo">
+      mahakatha
+      <span>SPIRITUAL WISDOM FOR MODERN SEEKERS</span>
+    </div>
+  </div>
+</body>
+</html>
